@@ -1,0 +1,95 @@
+/* overlay.css - Injected cleanly into all websites */
+.clipsync-overlay-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2147483630;
+}
+
+.clipsync-note {
+  position: absolute;
+  width: 250px;
+  border-radius: 12px;
+  pointer-events: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease;
+}
+
+.clipsync-note:focus-within {
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.3);
+}
+
+.clipsync-theme-yellow   { background: #fef9c3; border-color: #fde047; color: #713f12; }
+.clipsync-theme-mint     { background: #d1fae5; border-color: #6ee7b7; color: #065f46; }
+.clipsync-theme-lavender { background: #f3e8ff; border-color: #d8b4fe; color: #581c87; }
+.clipsync-theme-coral    { background: #ffe4e6; border-color: #fecdd3; color: #881337; }
+
+.clipsync-handle {
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.06);
+  cursor: grab;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  user-select: none;
+}
+
+.clipsync-handle:active {
+  cursor: grabbing;
+}
+
+.clipsync-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.clipsync-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.clipsync-actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.clipsync-actions button:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.clipsync-body {
+  padding: 10px;
+}
+
+.clipsync-collapsed .clipsync-body {
+  display: none;
+}
+
+.clipsync-textarea {
+  width: 100%;
+  height: 80px;
+  border: none;
+  background: transparent;
+  outline: none;
+  resize: vertical;
+  font-size: 12px;
+  line-height: 1.45;
+  color: inherit;
+  font-family: inherit;
+}

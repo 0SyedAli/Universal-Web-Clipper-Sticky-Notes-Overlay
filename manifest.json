@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "ClipSync Pro - Sticky Notes Overlay & Clipper",
+  "version": "1.0.1",
+  "description": "Attach persistent draggable sticky notes and highlight web content. Remembers notes by unique webpage URL.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "sidePanel",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["overlay.css"]
+    }
+  ],
+  "action": {
+    "default_title": "Open ClipSync Side Panel",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png"
+    }
+  },
+  "commands": {
+    "add-sticky-note": {
+      "suggested_key": {
+        "default": "Alt+N"
+      },
+      "description": "Add Sticky Note to current URL"
+    },
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+C"
+      },
+      "description": "Open Side Panel"
+    }
+  }
+}
